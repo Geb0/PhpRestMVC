@@ -1,0 +1,49 @@
+/*
+ * css/styles.js
+ *
+ * Styles for PhpRestMVC
+ *
+ * Copyright © 2024, Philippe Croué, all rights reserved under MIT license.
+ */
+:root {
+  --page-width: 900px;
+  --page-color: #202020;
+  --page-background-color: #f0f0f0;
+  --page-background-image: url(../img/background.jpg);
+  --page-font-size: 1rem;
+  --page-icon-height: 32px;
+}
+BODY {
+  min-height: 100vh;
+  color: var(--page-background-color);
+  background-color: var(--page-color);
+  font-size: var(--page-font-size);
+  line-height: calc(var(--page-font-size) * 1.25);
+}
+.main {
+  width: var(--page-width);
+  max-width: 100%;
+}
+.main-content {
+  color: var(--page-color);
+  background-color: var(--page-background-color);
+  background-image: var(--page-background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+.logo {
+  height: var(--page-icon-height);
+  cursor: pointer;
+}
+#help, #readme, #license {
+  white-space: pre-wrap;
+}
+.table {
+  --bs-table-bg: rgba(0, 0, 0, 0);
+}
+.fs-small {
+  font-size: calc(var(--page-font-size) * 0.8);
+  line-height: calc(var(--page-font-size) * 0.8 * 1.25);
+}

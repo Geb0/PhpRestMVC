@@ -1,0 +1,41 @@
+{
+    "name": "phcroue/phprestmvc",
+    "description": "PhpRestMVC is a PHP Rest MVC base example",
+    "version": "0.0.1",
+    "type": "project",
+    "keywords": ["PhpRestMVC", "php", "rest", "mvc", "base", "basic", "example", "authentication", "phpunit"],
+    "homepage": "http://localhost/PhpRestMVC/",
+    "readme": "README.md",
+    "time": "2024-06-01",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Philippe Croué",
+            "email": "philippe@croue.com",
+            "homepage": "http://croue.com",
+            "role": "Initial designer"
+        }
+    ],
+    "support": {
+            "email": "support@PhpRestMVC.Top",
+            "source": "https://github.com/Geb0/PhpRestMVC",
+            "docs": "https://PhpRestMVC.Top/doc"
+    },
+    "autoload": {
+          "psr-4": {
+              "PhpRestMVC\\": "src/"
+          }
+    },
+    "autoload-dev": {
+          "psr-4": {
+              "PhpRestMVC\\Tests\\": "tests/"
+          }
+    },
+    "require": {
+          "php": ">=8.0.0"
+   },
+    "require-dev": {
+        "phpunit/phpunit": "^11.3@dev"
+    }
+}
