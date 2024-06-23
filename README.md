@@ -20,7 +20,8 @@ Run Composer in the application folder to initialize its packages:
 
 Create and populate tables user and test in a database:
 
-```CREATE TABLE user (
+```
+CREATE TABLE user (
   usr_id INT NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
   usr_firstname VARCHAR(64) NOT NULL COMMENT 'First name',
   usr_lastname VARCHAR(64) NOT NULL COMMENT 'Last name',
@@ -53,7 +54,8 @@ INSERT INTO test(test_name, test_description, test_value, test_price, test_activ
 ('Test 6', 'This this the test 6', 6, 6.66, 0),
 ('Test 7', 'This this the test 7', 7, 7.77, 1),
 ('Test 8', 'This this the test 8', 8, 8.88, 0),
-('Test 9', 'This this the test 9', 9, 9.99, 1);```
+('Test 9', 'This this the test 9', 9, 9.99, 1);
+```
 
 Update the file `src/config/database.json` to set your database connection parameters.
 
