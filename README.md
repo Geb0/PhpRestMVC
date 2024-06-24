@@ -5,10 +5,11 @@ PhpRestMVC is a Rest example written in PHP with a MVC architecture.
 
 ## Requirements
 
-Latest Composer
 PHP `8.2.10` or above for the latest version.
+
 Composer `2.5.8` or above for the latest version.
-MySQL 8.0.37
+
+MySQL `8.0.37`
 
 ## Installation
 
