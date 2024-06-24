@@ -9,6 +9,7 @@ namespace PhpRestMVC\Model;
 
 use PhpRestMVC\Router;
 use PhpRestMVC\Model\Model;
+use PhpRestMVC\Utilities\MessageLevel;
 use PhpRestMVC\Utilities\Message;
 
 /**
@@ -34,7 +35,7 @@ class User {
       return $query;
     }
 
-    Message::getInstance()::add('Error, user '.$id.' not found.', 'error');
+    Message::getInstance()::add('Error, user '.$id.' not found.', MessageLevel::Error);
     return [];
   }
 

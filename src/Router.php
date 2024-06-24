@@ -95,7 +95,7 @@ class Router {
    */
   public function __construct() {
 
-    if(LOG) {
+    if(Env::getInstance()::getConfig('log')) {
 
       ini_set('display_errors', 1);
       error_reporting(E_ALL);

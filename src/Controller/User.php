@@ -8,6 +8,7 @@
 namespace PhpRestMVC\Controller;
 
 use PhpRestMVC\Utilities\Tools;
+use PhpRestMVC\Utilities\MessageLevel;
 use PhpRestMVC\Utilities\Message;
 use PhpRestMVC\Controller\Controller;
 use PhpRestMVC\Model\User as ModelUser;
@@ -63,11 +64,11 @@ class User extends Controller {
 
     if($user > 0) {
 
-      Message::getInstance()::add('A new user have been created with identifier #'.$user.'.', 'info');
+      Message::getInstance()::add('A new user have been created with identifier #'.$user.'.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, user have not been created.', 'error');
+      Message::getInstance()::add('Error, user have not been created.', MessageLevel::Error);
     }
 
     return $this->show($user);
@@ -86,11 +87,11 @@ class User extends Controller {
 
     if($user !== false) {
 
-      Message::getInstance()::add('User updated, '.$user.' row(s) impacted.', 'info');
+      Message::getInstance()::add('User updated, '.$user.' row(s) impacted.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, User have not been updated.', 'error');
+      Message::getInstance()::add('Error, User have not been updated.', MessageLevel::Error);
     }
 
     return $this->show($user);
@@ -109,11 +110,11 @@ class User extends Controller {
 
     if($user) {
 
-      Message::getInstance()::add('User deleted, '.$user.' row(s) impacted.', 'info');
+      Message::getInstance()::add('User deleted, '.$user.' row(s) impacted.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, User have not been deleted.', 'error');
+      Message::getInstance()::add('Error, User have not been deleted.', MessageLevel::Error);
     }
 
     return $this->show($user);

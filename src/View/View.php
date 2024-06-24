@@ -67,7 +67,7 @@ class View {
       $response['help'] = $help;
     }
 
-    if(LOG) {
+    if(Env::getInstance()::getConfig('log')) {
 
       $response['env'] = Env::getInstance()::getAll();
       $response['readme'] = Tools::getLocalFile(ROOT.'README.md');

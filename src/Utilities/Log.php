@@ -28,13 +28,13 @@ class Log {
   * Show system message
   *
   * @param Mixed $message, the message to show
-  * @param String $type, the type of the message (default debug)
+  * @param String $type, the type of the message
   */
-  public static function add($message, $type = 'debug') {
+  public static function add($message, $type = '') {
 
     $type = Message::getValidType($type);
 
-    if(LOG) {
+    if(Env::getInstance()::getConfig('log')) {
 
       $timestamp = microtime();
       $timestampParts = explode(" ", $timestamp);
@@ -86,7 +86,7 @@ class Log {
 
     $out = [];
 
-    if(LOG) {
+    if(Env::getInstance()::getConfig('log')) {
 
       $lines = explode(PHP_EOL.self::$separator.PHP_EOL, self::getLastFileContent());
 
@@ -120,7 +120,7 @@ class Log {
 
     $out = '';
 
-    if(LOG) {
+    if(Env::getInstance()::getConfig('log')) {
 
       $out .= '<div class="log">';
       $lines = explode(PHP_EOL.self::$separator.PHP_EOL, self::getLastFileContent());

@@ -64,11 +64,11 @@ class Test extends Controller {
 
     if($test > 0) {
 
-      Message::getInstance()::add('A new test have been created with identifier #'.$test.'.', 'info');
+      Message::getInstance()::add('A new test have been created with identifier #'.$test.'.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, test have not been created.', 'error');
+      Message::getInstance()::add('Error, test have not been created.', MessageLevel::Error);
     }
 
     return $this->show($test);
@@ -86,11 +86,11 @@ class Test extends Controller {
 
     if($test !== false) {
 
-      Message::getInstance()::add('Test updated, '.$test.' row(s) impacted.', 'info');
+      Message::getInstance()::add('Test updated, '.$test.' row(s) impacted.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, Test have not been updated.', 'error');
+      Message::getInstance()::add('Error, Test have not been updated.', MessageLevel::Error);
     }
 
     return $this->show($test);
@@ -108,11 +108,11 @@ class Test extends Controller {
 
     if($test) {
 
-      Message::getInstance()::add('Test deleted, '.$test.' row(s) impacted.', 'info');
+      Message::getInstance()::add('Test deleted, '.$test.' row(s) impacted.', MessageLevel::Info);
 
     } else {
 
-      Message::getInstance()::add('Error, Test have not been deleted.', 'error');
+      Message::getInstance()::add('Error, Test have not been deleted.', MessageLevel::Error);
     }
 
     return $this->show($test);

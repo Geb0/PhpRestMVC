@@ -75,16 +75,12 @@ class Model {
     } catch (\PDOException $e) {
 
       // Connection error
-
-      // TODO Use more generic message for production
-      Message::getInstance()::add('Database connection PDO error: '.$e->getMessage(), 'error');
+      Message::getInstance()::add('Database connection PDO', 'critical');
 
     } catch (\Exception $e) {
 
       // Other error
-
-      // TODO Use more generic message for production
-      Message::getInstance()::add('Database connection error: '.$e->getMessage(), 'error');
+      Message::getInstance()::add('Database connection', 'critical');
     }
   }
 
@@ -173,17 +169,15 @@ class Model {
 
       } catch (\PDOException $e) {
 
-        if(LOG) self::log('Database connection error: '.$e->getMessage());
+        if(Env::getInstance()::getConfig('log')) self::log('Database connection error');
 
-        // TODO Use more generic message for production
-        Message::getInstance()::add('Query PDO error: '.$e->getMessage(), 'error');
+        Message::getInstance()::add('Query PDO error', 'error');
 
       } catch (\Exception $e) {
 
-        if(LOG) self::log('General database error: '.$e->getMessage());
+        if(Env::getInstance()::getConfig('log')) self::log('General database error');
 
-        // TODO Use more generic message for production
-        Message::getInstance()::add('Query error: '.$e->getMessage(), 'error');
+        Message::getInstance()::add('Query error', 'error');
       }
     }
 

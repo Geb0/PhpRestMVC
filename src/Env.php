@@ -188,7 +188,7 @@ class Env {
       'name'     => self::getName(),
       'root'     => ROOT,
       'baseurl'  => self::getBaseUrl(),
-      'log'      => LOG,
+      'log'      => self::getConfig('log'),
       'composer' => self::getComposer(),
       'config'   => self::getConfig(),
     ];

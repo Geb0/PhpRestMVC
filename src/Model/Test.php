@@ -10,6 +10,7 @@ namespace PhpRestMVC\Model;
 use PhpRestMVC\Env;
 use PhpRestMVC\Router;
 use PhpRestMVC\Model\Model;
+use PhpRestMVC\Utilities\MessageLevel;
 use PhpRestMVC\Utilities\Message;
 
 /**
@@ -41,7 +42,7 @@ class Test {
       return $query;
     }
 
-    Message::getInstance()::add('Error, test not found.', 'error');
+    Message::getInstance()::add('Error, test not found.', MessageLevel::Error);
     return [];
   }
 
@@ -65,7 +66,7 @@ class Test {
       return $query[0];
     }
 
-    Message::getInstance()::add('Error, test '.$id.' not found.', 'error');
+    Message::getInstance()::add('Error, test '.$id.' not found.', MessageLevel::Error);
     return [];
   }
 

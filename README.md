@@ -63,7 +63,9 @@ Update the file `src/config/config.json` if you want to change application confi
 
 Open the index page in a web browser.
 
-Test with user `#1`, API key `APIKeyForUser1`.
+Use user `#1` and API key `APIKeyForUser1`.
+
+To run PHPunit to test, use `runtests.sh`.
 
 ## License
 
