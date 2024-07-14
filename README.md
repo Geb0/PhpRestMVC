@@ -73,7 +73,3 @@ To run PHPunit to test, use `runtests.sh`.
 ## License
 
 PhpRestMVC is licensed under the MIT License - see the LICENSE file for details.
-
-## Credits
-
-Thanks to [vecstock](https://www.freepik.com/author/vecstock) for the base of src/public/img/[background.jpg](https://www.freepik.com/free-ai-image/futuristic-geometric-shapes-connect-modern-abstract-design-generated-by-ai_41594626.htm)
