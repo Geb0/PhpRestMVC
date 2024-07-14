@@ -1,4 +1,6 @@
 {
-  "log": true,
-  "rowCount": 5
+  "log": false,
+  "rowCount": 5,
+  "passwordHash": "sha256",
+  "secondsTimeout": 60
 }

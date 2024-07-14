@@ -21,7 +21,7 @@ class Log {
   * Property String $separator
   * Separator to use to separate line elements in file
   */
-  private static $separator = '|-|';
+  private static $separator = "\t";
 
   /**
   * Method add
@@ -41,7 +41,7 @@ class Log {
       $now = date("Y-m-d H:i:s", intval($timestampParts[1]));
       $now .= intval($timestampParts[0] * 10000);
       // New file each minute
-      $file = ROOT.'session/log/php/'.date("Y-m-d-H-m", intval($timestampParts[1])).'.log';
+      $file = ROOT.'session/log/php/'.date("Y-m-d_H-m", intval($timestampParts[1])).'.log';
       $fp = fopen($file, 'a');
       fwrite($fp,
         $now

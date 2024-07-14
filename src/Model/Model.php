@@ -111,6 +111,45 @@ class Model {
   }
 
   /**
+   * Method setUserSessionKey
+   * Save user API key and timestamp
+   *
+   * @param Integer $id, The user identifier
+   * @param String $key, The user session key to set
+   * @param Integer $timestamp, The user session timestamp to set
+   *
+   * @return Boolean, true if update done, otherwise false
+   */
+  public static function setUserSession($id, $key, $timestamp) {
+
+    $query = Model::getInstance()::query(
+      'UPDATE user SET usr_key=?, usr_timestamp=? WHERE usr_id=?',
+      [$key, $timestamp, $id]
+    );
+
+    return $query == 1;
+  }
+
+  /**
+   * Method setUserSessionTimestamp
+   * Save user API key and timestamp
+   *
+   * @param Integer $id, The user identifier
+   * @param Float $timestamp, The user session timestamp to set
+   *
+   * @return Boolean, true if update done, otherwise false
+   */
+  public static function setUserSessionTimestamp($id, $timestamp) {
+
+    $query = Model::getInstance()::query(
+      'UPDATE user SET usr_timestamp=? WHERE usr_id=?',
+      [$timestamp, $id]
+    );
+
+    return $query == 1;
+  }
+
+  /**
   * query
   * Execute SQL query
   *

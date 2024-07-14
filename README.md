@@ -27,14 +27,16 @@ CREATE TABLE user (
   usr_firstname VARCHAR(64) NOT NULL COMMENT 'First name',
   usr_lastname VARCHAR(64) NOT NULL COMMENT 'Last name',
   usr_description TEXT NULL COMMENT 'Description',
-  usr_key VARCHAR(64) NOT NULL COMMENT 'API Key',
+  usr_password VARCHAR(64) NOT NULL COMMENT 'Password',
   usr_active BOOLEAN NOT NULL DEFAULT true COMMENT 'Active',
+  usr_key VARCHAR(64) NOT NULL DEFAULT '' COMMENT 'Session',
+  usr_timestamp INT NOT NULL DEFAULT 0 COMMENT 'Timestamp',
   CONSTRAINT pk__user PRIMARY KEY(usr_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'User';
 
-INSERT INTO user(usr_firstname, usr_lastname, usr_key, usr_description, usr_active) VALUES
-('Test1', 'First test user', 'APIKeyForUser1', 'The first test user active', 1),
-('Test2', 'Second test user', 'APIKeyForUser2', 'The first test user inactive', 0);
+INSERT INTO user(usr_firstname, usr_lastname, usr_password, usr_description, usr_active) VALUES
+('Test1', 'First test user', 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1', 'The first test active user with "pass" password', 1),
+('Test2', 'Second test user', 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1', 'The second test inactive user with "pass" password', 0);
 
 CREATE TABLE test (
   test_id INT NOT NULL AUTO_INCREMENT COMMENT 'Identifier',

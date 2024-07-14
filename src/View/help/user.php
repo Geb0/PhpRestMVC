@@ -15,7 +15,7 @@ Create and delete actions (POST and DELETE) are disabled for user.
 
 User must be active to use this API.
 
-Fields available:
+Fields availables for update:
 
 - usr_firstname (string), the user's first name.
 - usr_lastname (string), the user's last name.

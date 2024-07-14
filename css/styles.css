@@ -34,8 +34,11 @@ BODY {
   background-position: center center;
 }
 .logo {
-  height: var(--page-icon-height);
+  width: var(--page-icon-height);
   cursor: pointer;
+}
+.logoSpace {
+  min-width: calc(var(--page-icon-height) + 0.5rem);
 }
 #help, #readme, #license {
   white-space: pre-wrap;

@@ -9,7 +9,7 @@
 ?>
 <?= $env::getName() ?> help for Test
 
-Available fields:
+Fields availables for update:
 
 - test_name (string), the test's name.
 - test_description (string), the test's description.

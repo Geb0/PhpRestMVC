@@ -35,7 +35,7 @@ class User {
       return $query;
     }
 
-    Message::getInstance()::add('Error, user '.$id.' not found.', MessageLevel::Error);
+    Message::getInstance()::add('Error, unknown user.', MessageLevel::Error);
     return [];
   }
 
@@ -43,7 +43,7 @@ class User {
    * Method updateUser
    * Update user in database
    *
-   * @param String $id, The user identifier
+   * @param Integer $id, The user identifier
    * @param Array $fields, The user fields to update
    *
    * @return Boolean, true if user is updated, otherwise false
@@ -66,8 +66,8 @@ class User {
            .' WHERE usr_id=?';
 
     $binds[] = $id;
-    $query = Model::query($sql, $binds);
+    $query = Model::getInstance()::query($sql, $binds);
 
-    return $query;
+    return $query == 1;
   }
 }

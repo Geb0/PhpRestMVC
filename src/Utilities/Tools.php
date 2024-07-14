@@ -78,7 +78,7 @@ class Tools {
    * Generate random string from letters or numbers at least
    *
    * @param Integer $length, the string length to generate
-   * @param String $added, the additional chars to use to generate string
+   * @param String $specific, the additional specific chars to use to generate string
    *
    * @return String, the generated value
    */

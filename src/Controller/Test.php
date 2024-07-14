@@ -93,7 +93,7 @@ class Test extends Controller {
       Message::getInstance()::add('Error, Test have not been updated.', MessageLevel::Error);
     }
 
-    return $this->show($test);
+    return $this->show();
   }
 
   /**
@@ -115,6 +115,6 @@ class Test extends Controller {
       Message::getInstance()::add('Error, Test have not been deleted.', MessageLevel::Error);
     }
 
-    return $this->show($test);
+    return $this->show();
   }
 }

@@ -78,15 +78,43 @@ function sendRequest() {
 }
 
 /**
+ * Function authenticate
+ * User authentication
+ */
+function authenticate() {
+
+  document.getElementById('k').value = '';
+
+  let data = {};
+
+  data.m = 'auth';
+  data.u = document.getElementById('u').value;
+  data.p = document.getElementById('p').value;
+
+  request(data, callbackAuthenticate);
+}
+
+/**
+ * Function callbackAuthenticate
+ * Callback function called by authenticate
+ *
+ * @param Object result, the requester response
+ */
+function callbackAuthenticate(response) {
+
+  result = JSON.parse(response);
+  document.getElementById('p').value = '';
+  document.getElementById('k').value = result.data.key;
+  console.log(result);
+}
+
+/**
  * Function callbackRequester
  * Callback function called by request, show result on page
  *
  * @param Object result, the requester response
  */
 function callbackRequester(response) {
-
-  console.log(typeof response);
-  console.log(response);
 
   result = JSON.parse(response);
 
@@ -130,7 +158,7 @@ function callbackRequester(response) {
     document.getElementById('help').innerHTML = result.help;
     document.getElementById('help').classList.remove('d-none');
   }
-
+/*
   if(typeof result.readme !== 'undefined' && result.readme != '') {
 
     document.getElementById('readme').innerHTML = '<h4>README.md</h4>' + result.readme;
@@ -142,7 +170,7 @@ function callbackRequester(response) {
     document.getElementById('license').innerHTML = '<h4>LICENSE</h4>' + result.license;
     document.getElementById('license').classList.remove('d-none');
   }
-
+*/
   document.getElementById('result').classList.remove('d-none');
 }
 

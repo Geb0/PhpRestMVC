@@ -42,18 +42,32 @@ $env = \PhpRestMVC\Env::getInstance();
 <body>
   <div class="container main mx-auto my-0">
     <div class="row">
-      <div class="col main-content text-start m-0 p-2">
-
+      <div class="col main-content text-start m-0 p-2 pb-0">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-stretch">
-          <div class="align-self-start align-self-md-center pe-0 pe-md-1 pb-1 pb-md-0" style="width: 3rem;">
+          <div class="align-self-start align-self-md-center pe-0 pe-md-1 pb-1 pb-md-0 logoSpace">
             <img class="logo" src="./img/logo.svg" onclick="resetArguments()" title="Reset arguments" />
           </div>
           <div class="align-self-start align-self-md-center w-100 pe-0 pe-md-1 pb-1 pb-md-0">
-            <input class="form-control fs-small" type="text" id="u" name="u" placeholder="Auth. user Id." />
+            <input class="form-control fs-small" type="text" id="u" name="u" placeholder="Authentication user Identifier" />
           </div>
           <div class="align-self-start align-self-md-center w-100 pe-0 pe-md-1 pb-1 pb-md-0">
-            <input class="form-control fs-small" type="text" id="k" name="k" placeholder="Auth. API key" />
+            <input class="form-control fs-small" type="text" id="p" name="p" placeholder="Authentication password" />
           </div>
+          <div class="align-self-start align-self-md-center pe-0 pe-md-1 pb-1 pb-md-0">
+            <button class="btn btn-primary px-2 py-1" style="font-size: 75%;" onclick="authenticate()">Authenticate</button>
+          </div>
+          <div class="align-self-start align-self-md-center w-100">
+            <input class="form-control fs-small" type="text" id="k" name="k" placeholder="User current session key" readonly="readonly" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col main-content text-start m-0 p-2 pt-1">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-stretch">
+          <div class="align-self-start align-self-md-center pe-0 pe-md-1 pb-1 pb-md-0 logoSpace"></div>
           <div class="align-self-start align-self-md-center w-100 pe-0 pe-md-1 pb-1 pb-md-0">
             <select class="form-select fs-small" id="m" name="m" placeholder="Method">
               <option disabled>Select a method...</option>
