@@ -19,14 +19,14 @@ use PhpRestMVC\Utilities\Message;
 class User {
 
   /**
-   * Method getUserById
+   * Method getById
    * Get user information with its identifier
    *
    * @param Integer $id, The user identifier
    *
    * @return Array, the user information
    */
-  public static function getUserById($id) {
+  public static function getById($id) {
 
     $query = Model::getInstance()::getUserById($id);
 
@@ -40,7 +40,7 @@ class User {
   }
 
   /**
-   * Method updateUser
+   * Method update
    * Update user in database
    *
    * @param Integer $id, The user identifier
@@ -48,7 +48,7 @@ class User {
    *
    * @return Boolean, true if user is updated, otherwise false
    */
-  public static function updateUser($id, $fields) {
+  public static function update($id, $fields) {
 
     if($fields == []) return false;
 

@@ -46,21 +46,21 @@ class User extends Controller {
    */
   public function index() {
 
-    $user = ModelUser::getUserById(self::$_router::getUser());
+    $user = ModelUser::getById(self::$_router::getUser());
 
     return $this->show($user);
   }
 
   /**
    * Method post
-   * Create new test row
+   * Create new user row
    * Usable only by administrator users
    *
    * @return String, the creation result
    */
   public function post() {
 
-    $user = ModelUser::createUser($this->getFields(self::$validFields));
+    $user = ModelUser::create($this->getFields(self::$validFields));
 
     if($user > 0) {
 
@@ -83,11 +83,11 @@ class User extends Controller {
    */
   public function put() {
 
-    $user = ModelUser::updateUser(self::$_router::getUser(), $this->getFields(self::$validFields));
+    $user = ModelUser::update(self::$_router::getUser(), $this->getFields(self::$validFields));
 
     if($user !== false) {
 
-      Message::getInstance()::add('User updated, '.$user.' row(s) impacted.', MessageLevel::Info);
+      Message::getInstance()::add('User updated.', MessageLevel::Info);
 
     } else {
 
@@ -106,11 +106,11 @@ class User extends Controller {
    */
   public function delete() {
 
-    $user = ModelUser::deleteTest(self::$_router::getId());
+    $user = ModelUser::delete(self::$_router::getId());
 
     if($user) {
 
-      Message::getInstance()::add('User deleted, '.$user.' row(s) impacted.', MessageLevel::Info);
+      Message::getInstance()::add('User deleted.', MessageLevel::Info);
 
     } else {
 

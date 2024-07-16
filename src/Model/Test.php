@@ -20,14 +20,14 @@ use PhpRestMVC\Utilities\Message;
 class Test {
 
   /**
-   * Method getTestById
+   * Method get
    * Get test row with its identifier
    *
    * @param Integer $id, The test identifier
    *
    * @return Array, the test information row
    */
-  public static function getTest() {
+  public static function get() {
 
     $query = Model::getInstance()::query(
       'SELECT * from test LIMIT '
@@ -42,19 +42,19 @@ class Test {
       return $query;
     }
 
-    Message::getInstance()::add('Error, test not found.', MessageLevel::Error);
+    Message::getInstance()::add('Error, tests not found.', MessageLevel::Error);
     return [];
   }
 
   /**
-   * Method getTestById
+   * Method getById
    * Get test row with its identifier
    *
    * @param Integer $id, The test identifier
    *
    * @return Array, the test information row
    */
-  public static function getTestById($id) {
+  public static function getById($id) {
 
     $query = Model::getInstance()::query(
       'SELECT * from test WHERE test_id=? LIMIT 0,1',
@@ -71,14 +71,14 @@ class Test {
   }
 
   /**
-   * Method createTest
+   * Method create
    * Add new test in database
    *
    * @param Array $fields, The test fields to use for creation
    *
    * @return Integer, the created test identifier or 0 if error
    */
-  public static function createTest($fields) {
+  public static function create($fields) {
 
     if($fields == []) return 0;
 
@@ -101,12 +101,11 @@ class Test {
 
     $query = Model::getInstance()::query($sql, $binds);
 
-    // Returns 0 if query error (false -> 0)
     return intval($query);
   }
 
   /**
-   * Method updateTest
+   * Method update
    * Update specific test in database
    *
    * @param String $id, The test identifier
@@ -114,7 +113,7 @@ class Test {
    *
    * @return Boolean, true if test is updated, otherwise false
    */
-  public static function updateTest($id, $fields) {
+  public static function update($id, $fields) {
 
     if($fields == []) return false;
 
@@ -134,23 +133,23 @@ class Test {
     $binds[] = $id;
     $query = Model::getInstance()::query($sql, $binds);
 
-    return $query;
+    return $query == 1;
   }
 
   /**
-   * Method deleteTest
+   * Method delete
    * Delete specific test in database
    *
    * @param String $id, The test identifier
    *
    * @return Boolean, true if test is deleted, otherwise false
    */
-  public static function deleteTest($id) {
+  public static function delete($id) {
 
     $sql = 'DELETE FROM test WHERE test_id=?';
     $binds[] = $id;
     $query = Model::getInstance()::query($sql, $binds);
 
-    return $query;
+    return $query == 1;
   }
 }

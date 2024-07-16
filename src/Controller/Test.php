@@ -34,7 +34,7 @@ class Test extends Controller {
    */
   public function list() {
 
-    $test = ModelTest::getTest();
+    $test = ModelTest::get();
 
     return $this->show($test);
   }
@@ -47,7 +47,7 @@ class Test extends Controller {
    */
   public function index() {
 
-    $test = ModelTest::getTestById(self::$_router::getId());
+    $test = ModelTest::getById(self::$_router::getId());
 
     return $this->show($test);
   }
@@ -60,7 +60,7 @@ class Test extends Controller {
    */
   public function post() {
 
-    $test = ModelTest::createTest($this->getFields(self::$validFields));
+    $test = ModelTest::create($this->getFields(self::$validFields));
 
     if($test > 0) {
 
@@ -82,11 +82,11 @@ class Test extends Controller {
    */
   public function put() {
 
-    $test = ModelTest::updateTest(self::$_router::getId(), $this->getFields(self::$validFields));
+    $test = ModelTest::update(self::$_router::getId(), $this->getFields(self::$validFields));
 
     if($test !== false) {
 
-      Message::getInstance()::add('Test updated, '.$test.' row(s) impacted.', MessageLevel::Info);
+      Message::getInstance()::add('Test updated.', MessageLevel::Info);
 
     } else {
 
@@ -104,11 +104,11 @@ class Test extends Controller {
    */
   public function delete() {
 
-    $test = ModelTest::deleteTest(self::$_router::getId());
+    $test = ModelTest::delete(self::$_router::getId());
 
     if($test) {
 
-      Message::getInstance()::add('Test deleted, '.$test.' row(s) impacted.', MessageLevel::Info);
+      Message::getInstance()::add('Test deleted.', MessageLevel::Info);
 
     } else {
 
